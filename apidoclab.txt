@@ -68,3 +68,43 @@ http://swapi.dev/api/starships/?search=millennium
 
 
 
+
+Summary#
+In this section, you’ll be looking through the documentation for the Social Mountain API and answering questions. You’ll also be making requests and recording the URLs and some information about the responses. Run the requests in Postman. Note: this API is live and viewable by your classmates and staff. Keep things appropriate for class.
+
+You can view the documentation for the Social Mountain API here
+
+The base URL of your requests is: https://practiceapi.devmountain.com/api (make sure to have the “s” in “https”)
+
+1. Check if the POST request accept params, queries, and/or a body. Which one(s) and what information is it expecting to be sent? It takes parameter of text and it would be json data containing a string.
+
+2. What data type does the GET request return? JSON object containing id, text, and date.
+
+3. What would the URL look like for deleting the post with the id 555? (This post does not exist anymore, but the syntax is the same for existing posts)
+https://practiceapi.devmountain.com/api/555
+
+
+4. List the possible response codes from the GET request at /posts/filter
+200 - returns the data 409 request query is missing required text property
+
+
+5. Create a post whose text is your name, record the URL and body here: https://practiceapi.devmountain.com/api/posts
+{
+    "text": "Michelle Rotella"
+}
+
+6. What would the URL and body object be to update the post you just made to contain your faovrite color instead of your name?
+https://practiceapi.devmountain.com/api/posts/?id=1882
+{
+    "text": "black"
+}
+
+7. What is the URL to get posts that contain the text “blue”?
+https://practiceapi.devmountain.com/api/posts/filter/?text=blue
+
+8. Make a request to GET all the posts. What are the content type and charset of the response? (Hint: look on the Headers)
+https://practiceapi.devmountain.com/api/posts/
+application/json; charset=utf-8
+
+9. What would cause a PUT request to return a 409 status? It is missing the text property needed to update
+10. What happens if you try to send a query in the GET request URL? Why do you get that response?  It still returns all data - because that is the only response it was set up for.  You have to use filter to query.
